@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ao2ex2;
+package AO2.ex2;
 
 /**
  *
@@ -42,7 +42,7 @@ public class ItemPedido {
     }
 
     public double getPreco() {
-        return (preco * quantidade);
+        return preco;
     }
 
     public void setPreco(double preco) throws Exception {

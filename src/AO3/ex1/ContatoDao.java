@@ -31,7 +31,7 @@ public class ContatoDao {
         PreparedStatement stmt = null;
         String sql = "insert into contatos(nome, email, endereco, dataNascimento) values (?,?,?,?)";
         try {
-            connection = new ConnectionFactory().getConnection();
+            connection = new ConnectionFactoryComProperties().getConnection();
             stmt = connection.prepareStatement(sql);
             stmt.setString(1, contato.getNome());
             stmt.setString(2, contato.getEmail());
@@ -51,7 +51,7 @@ public class ContatoDao {
         PreparedStatement stmt = null;
         String sql = "DELETE * FROM contatos WHERE id = ?";
         try {
-            connection = new ConnectionFactory().getConnection();
+            connection = new ConnectionFactoryComProperties().getConnection();
             stmt = connection.prepareStatement(sql);
             stmt.setInt(1, id);
             stmt.execute();
@@ -68,7 +68,7 @@ public class ContatoDao {
         PreparedStatement stmt = null;
         String sql = "UPDATE contatos SET ? = ? WHERE id = ?";
         try {
-            connection = new ConnectionFactory().getConnection();
+            connection = new ConnectionFactoryComProperties().getConnection();
             stmt = connection.prepareStatement(sql);
             stmt.setString(1, atributo);
             stmt.setString(2, newValue);
@@ -87,7 +87,7 @@ public class ContatoDao {
         PreparedStatement stmt = null;
         String sql = "SELECT * FROM contatos";
         try {
-            connection = new ConnectionFactory().getConnection();
+            connection = new ConnectionFactoryComProperties().getConnection();
             stmt = connection.prepareStatement(sql);
             ResultSet stmtResult = stmt.executeQuery();
             List<Contato> lista = new ArrayList();

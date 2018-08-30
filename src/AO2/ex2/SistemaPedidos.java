@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ao2ex2;
+package AO2.ex2;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
@@ -62,9 +63,10 @@ public class SistemaPedidos {
                     }
                     break;
                 case 3:
-                    listaPedidos.forEach((listar) -> {
-                        System.out.println(listar.toString());
-                    });
+                    DecimalFormat df = new DecimalFormat("##,###,##0.00");
+                    for(Pedido c : listaPedidos) {
+                        System.out.println("Cliente: "+c.getCliente()+"\t-\t Total: R$"+df.format(c.getTotal()));
+                    }
                     break;
                 case 4:
                     achou = false;
