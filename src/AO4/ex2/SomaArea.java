@@ -12,7 +12,8 @@ import java.util.List;
  *
  * @author marcos
  */
-public class SomaArea<T> {
+
+public class SomaArea<T> {//? extends Superficie> {
 
     public SomaArea() {
     }
